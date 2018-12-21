@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:id="@+id/index"
+        android:layout_width="59dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp" >
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#8a000000"
+            android:layout_marginTop="16dp"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-medium"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_most_used"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <world.best.musicplayer.ui.FlowLayout
+        android:id="@+id/tag_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/index"
+        android:layout_marginTop="16dp"
+        android:minHeight="80dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:gravity="start|top" />
+
+    <View
+        android:id="@+id/full_divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/song_list_divider" />
+
+    <View
+        android:id="@+id/marginal_divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height"
+        android:layout_marginLeft="59dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/song_list_divider" />
+
+</RelativeLayout>

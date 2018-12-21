@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="nav_values">
+        <item>@string/tracks_title</item>
+        <item>@string/artists_title</item>
+        <item>@string/albums_title</item>
+        <item>@string/tags</item>
+    </string-array>
+
+    <string-array name="sort_values">
+        <item>@string/sort_alpha</item>
+        <item>@string/sort_recent</item>
+    </string-array>
+
+    <string-array name="sort_descriptions">
+        <item>@string/sort_desc_alpha</item>
+        <item>@string/sort_desc_recent</item>
+    </string-array>
+
+    <string-array name="song_menus">
+        <item>@string/am_tag</item>
+        <item>@string/song_details</item>
+        <item>@string/delete_song</item>
+        <item>@string/share_song</item>
+        <item>@string/ringtone_song</item>
+    </string-array>
+
+    <string-array name="tag_menus">
+        <item>@string/am_tag</item>
+        <item>@string/song_details</item>
+        <item>@string/tag_remove</item>
+    </string-array>
+
+</resources>

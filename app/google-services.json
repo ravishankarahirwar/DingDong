@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "248209878259",
+    "firebase_url": "https://musicplayer-9b9f7.firebaseio.com",
+    "project_id": "musicplayer-9b9f7",
+    "storage_bucket": "musicplayer-9b9f7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:248209878259:android:b924ca0f32466b38",
+        "android_client_info": {
+          "package_name": "world.best.musicplayer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "248209878259-g45a2g6v52i68t6r6un3534nmjbbm5dr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADyu8oSOZ2SqvNEm6yRaHlNuDBW72FSic"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <!--<color name="color_primary">#232C30</color>-->
+    <!--<color name="color_primary_dark">#1D2427</color>-->
+    <!--<color name="color_accent">#F0F0F0</color>-->
+
+    <!--New Color-->
+    <color name="colorPrimary">#FF232C30</color>
+    <color name="colorPrimaryDark">#1D2427</color>
+    <color name="colorAccent">#F0F0F0</color>
+
+    <!--Orignal-->
+    <!--<color name="colorPrimary">#FF4c2330</color>-->
+    <!--<color name="colorPrimaryDark">#26000000</color>-->
+    <!--<color name="colorAccent">#5d5d5d</color>-->
+
+    <color name="appwidget_text">#ffffffff</color>
+
+    <color name="sort_header_description_text_color">#66000000</color>
+    <color name="sort_header_divider_color">#0d000000</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="edit_dialog_bg_color">#FFF</color>
+    <color name="edit_dialog_text_color">#3Bd0C2</color>
+    <color name="edit_dialog_del_button_text_color">#FFFFFF</color>
+    <color name="edit_dialog_ok_cancel_text_color">#80CCC5</color>
+
+    <color name="tagged_color">#7ed321</color>
+    <color name="tag_color">#80000000</color>
+    <color name="tag_recent">#ff9c00</color>
+
+    <!-- Song list color -->
+    <color name="song_title">#1E1E1E</color>
+    <color name="song_sub_title">#8F8F8F</color>
+    <color name="song_list_divider">#eeeeee</color>
+    <color name="song_menu_text">#de000000</color>
+
+    <color name="control_selected_color">#3d3d3d</color>
+    <color name="control_enabled_color">#FFFFFFFF</color>
+    <color name="control_disabled_color">#66000000</color>
+
+    <color name="header_background_color">#1D2427</color>
+    <color name="row_selected_color">#e7e2e3</color>
+    <color name="row_checked_color">#cc232C30</color>
+
+    <color name="navigation_view_text_color">#de000000</color>
+    <color name="navigation_view_icon_color">#5D5D5D</color>
+    <color name="navigation_view_background">#FFFFFF</color>
+
+    <color name="controlbar_progress_color">#1D2427</color>
+
+    <color name="sort_icon_color">#8aFFFFFF</color>
+    <color name="sort_unselected">#1a000000</color>
+    <color name="sort_selected">#9E9E9E</color>
+
+    <color name="color_primary_band">#1D2427</color>
+    <color name="color_primary_dark_effect">#232C30</color>
+
+    <color name="text_color_unselected">#9E9E9E</color>
+    <color name="text_color_selected">#F0F0F0</color>
+
+    <color name="color_default">#3BD0C2</color>
+    <color name="color_default_pressed">#26A69A</color>
+
+    <color name="color_electric">#28D13D</color>
+    <color name="color_electric_pressed">#2BAF2B</color>
+
+    <color name="color_metal">#E95337</color>
+    <color name="color_metal_pressed">#C13920</color>
+
+    <color name="color_classic">#29ABE6</color>
+    <color name="color_classic_pressed">#0288D1</color>
+
+    <color name="color_pop">#F06292</color>
+    <color name="color_pop_pressed">#E91E63</color>
+
+    <color name="color_hip_hop">#A681E7</color>
+    <color name="color_hip_hop_pressed">#673AB7</color>
+
+    <color name="color_dance">#F9C91A</color>
+    <color name="color_dance_pressed">#F9A825</color>
+
+    <color name="color_flat">#FB8A00</color>
+    <color name="color_flat_pressed">#EF6C00</color>
+
+    <color name="color_jazz">#CAD562</color>
+    <color name="color_jazz_pressed">#AFB42B</color>
+
+    <color name="color_rock">#BA68C8</color>
+    <color name="color_rock_pressed">#9C27B0</color>
+
+    <color name="color_unplugged">#B89082</color>
+    <color name="color_unplugged_pressed">#8D6E63</color>
+
+    <color name="color_blues">#637AFF</color>
+    <color name="color_blues_pressed">#5C6BC0</color>
+
+    <color name="color_rb">#9CABE5</color>
+    <color name="color_rb_pressed">#738FFE</color>
+</resources>

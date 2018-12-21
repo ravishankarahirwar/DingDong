@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/format_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_alignParentTop="true" >
+
+        <TextView
+            android:id="@+id/format_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:fontFamily="sans-serif"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:text="@string/details_format" />
+
+        <TextView
+            android:id="@+id/format_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/format_key"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:fontFamily="sans-serif" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/duration_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_below="@+id/format_container" >
+
+        <TextView
+            android:id="@+id/duration_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:fontFamily="sans-serif"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:text="@string/details_duration" />
+
+        <TextView
+            android:id="@+id/duration_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/duration_key"
+            android:textColor="@android:color/white"
+            android:singleLine="true"
+            android:fontFamily="sans-serif" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/path_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_below="@+id/duration_container" >
+
+        <TextView
+            android:id="@+id/path_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:fontFamily="sans-serif"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:text="@string/details_path" />
+
+        <TextView
+            android:id="@+id/path_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/path_key"
+            android:textColor="@android:color/white"
+            android:singleLine="false"
+            android:fontFamily="sans-serif" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/size_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="24dp"
+        android:layout_below="@+id/path_container" >
+
+        <TextView
+            android:id="@+id/size_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:fontFamily="sans-serif"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:text="@string/details_size" />
+
+        <TextView
+            android:id="@+id/size_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/size_key"
+            android:textColor="@android:color/white"
+            android:singleLine="true"
+            android:fontFamily="sans-serif" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

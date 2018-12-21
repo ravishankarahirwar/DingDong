@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="imageTypes" id="@+id/mediaTypes">
+        <item >JPEG</item>
+        <item >GIF</item>
+        <item >PNG</item>
+        <item >PNG</item>
+        <item >BMP</item>
+        <item >WebP</item>
+    </string-array>
+    
+</resources>

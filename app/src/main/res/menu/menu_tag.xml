@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".activity.AlbumActivity">
+
+    <item
+        android:id="@+id/tag_delete"
+        android:title="@string/tag_delete"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/tag_rename"
+        android:title="@string/tag_rename"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+</menu>

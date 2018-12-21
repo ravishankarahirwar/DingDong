@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <path
+        android:name="Tag"
+        android:fillColor="#A6000000"
+        android:pathData="M5.5,7 C6.32842712,7 7,6.32842712 7,5.5 C7,4.67157288 6.32842712,4 5.5,4
+            C4.67157288,4 4,4.67157288 4,5.5 C4,6.32842712 4.67157288,7 5.5,7 L5.5,7 Z
+            M21.41,11.58 C21.77,11.94 22,12.44 22,13 C22,13.55 21.78,14.05 21.41,14.41
+            L14.41,21.41 C14.05,21.77 13.55,22 13,22 C12.45,22 11.95,21.77 11.58,21.41
+            L2.59,12.41 C2.22,12.05 2,11.55 2,11 L2,4 C2,2.89 2.89,2 4,2 L11,2 C11.55,2
+            12.05,2.22 12.41,2.58 L21.41,11.58 L21.41,11.58 Z"/>
+</vector>

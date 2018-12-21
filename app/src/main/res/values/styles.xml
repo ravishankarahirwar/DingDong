@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MusicBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    	<item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/colorPrimary</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="windowActionModeOverlay">true</item>
+    </style>
+
+    <style name="MusicBaseTheme.MusicNoActionBar" parent="MusicBaseTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="MusicBaseTheme.NowPlayingTheme" parent="MusicBaseTheme.MusicNoActionBar">
+
+    </style>
+
+    <style name="MusicDialog" parent="android:Theme.Material.Light.Dialog">
+
+    </style>
+
+    <style name="MusicBaseTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="windowActionBarOverlay">true</item>
+    </style>
+
+    <style name="MusicBaseTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="windowActionBarOverlay">true</item>
+    </style>
+
+     <style name="BandEditDialog" parent="android:Theme.Material.Dialog.Alert">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="BandEditDialogButtons">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+        <item name="android:textColor">@color/edit_dialog_ok_cancel_text_color</item>
+    </style>
+</resources>

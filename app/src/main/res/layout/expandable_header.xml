@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<world.best.musicplayer.ui.ExpandableHeaderView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:outlineProvider="bounds"
+    android:clipToPadding="false">
+
+    <LinearLayout
+        android:id="@+id/header_items_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/expandable_header_item"
+            android:id="@+id/header_item_1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sort_header_container_height"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/sort_header_divider_color" />
+
+        <LinearLayout
+            android:id="@+id/expandable_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/expandable_header_item"
+                android:id="@+id/header_item_2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sort_header_container_height" />
+
+            <include layout="@layout/expandable_header_item"
+                android:id="@+id/header_item_3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sort_header_container_height" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/expand_button"
+        android:layout_width="@dimen/sort_header_icon_size"
+        android:layout_height="@dimen/sort_header_icon_size"
+        android:layout_margin="24dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:layout_gravity="end"
+        android:src="@drawable/ic_down"
+        android:focusable="true"
+        android:clickable="true" />
+
+</world.best.musicplayer.ui.ExpandableHeaderView>

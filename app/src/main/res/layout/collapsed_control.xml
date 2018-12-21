@@ -1,0 +1,122 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/collapsed_control_main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_gravity="end|bottom" >
+
+    <RelativeLayout
+        android:id="@+id/collapsed_control_layout"
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:elevation="6dp"
+        android:visibility="gone" >
+
+        <FrameLayout
+            android:id="@+id/shadow"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/collapsed_control_shadow" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_below="@+id/shadow"
+            android:background="@android:color/white" >
+
+            <ImageView
+                android:id="@+id/artwork"
+                android:layout_width="72dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:transitionName="artwork" />
+
+            <RelativeLayout
+                android:id="@+id/control_layout"
+                android:layout_width="160dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true" >
+
+                <ImageView
+                    android:id="@+id/play_pause"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:padding="12dp"
+                    android:src="@drawable/ic_play"
+                    android:transitionName="play" />
+
+                <ImageView
+                    android:id="@+id/next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/play_pause"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:padding="12dp"
+                    android:src="@drawable/ic_next"
+                    android:transitionName="next" />
+
+                <ImageView
+                    android:id="@+id/previous"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/play_pause"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:padding="12dp"
+                    android:src="@drawable/ic_previous"
+                    android:transitionName="previous" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:layout_toLeftOf="@+id/control_layout"
+                android:layout_toRightOf="@+id/artwork" >
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif-medium"
+                    android:singleLine="true"
+                    android:textColor="#1E1E1E"
+                    android:textSize="14sp"
+                    android:transitionName="title" />
+
+                <TextView
+                    android:id="@+id/artist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif"
+                    android:singleLine="true"
+                    android:textColor="#99000000"
+                    android:textSize="11sp"
+                    android:transitionName="detail" />
+            </RelativeLayout>
+
+            <ProgressBar
+                android:id="@+id/song_progress"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/artwork"
+                android:progress="0"
+                android:progressTint="@color/controlbar_progress_color" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

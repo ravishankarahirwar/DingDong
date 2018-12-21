@@ -1,0 +1,122 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/notification_container"
+    android:layout_width="match_parent"
+    android:layout_height="128dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:background="@android:color/white"
+    android:clickable="true" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/artwork"
+            android:layout_width="128dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <RelativeLayout
+            android:id="@+id/info_container"
+            android:layout_width="216dp"
+            android:layout_height="71dp"
+            android:layout_toRightOf="@+id/artwork"
+            android:layout_alignParentTop="true" >
+
+            <ImageButton
+                android:id="@+id/dismiss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:padding="12dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_dismiss_notification"
+                android:background="?android:attr/selectableItemBackgroundBorderless" />
+
+            <RelativeLayout
+                android:id="@+id/info_container1"
+                android:layout_width="156dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_centerVertical="true" >
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:textSize="16sp"
+                    android:textColor="#de000000"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif" />
+
+                <TextView
+                    android:id="@+id/artist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title"
+                    android:textSize="14sp"
+                    android:textColor="#8a000000"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/divider"
+            android:layout_width="216dp"
+            android:layout_height="1dp"
+            android:layout_toRightOf="@+id/artwork"
+            android:layout_below="@+id/info_container"
+            android:background="#1a000000" />
+
+        <LinearLayout
+            android:layout_width="216dp"
+            android:layout_height="56dp"
+            android:layout_toRightOf="@+id/artwork"
+            android:layout_below="@+id/divider"
+            android:orientation="horizontal"
+            android:weightSum="3" >
+
+            <ImageButton
+                android:id="@+id/previous"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:padding="16dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_previous"
+                android:background="?android:attr/selectableItemBackgroundBorderless" />
+
+            <ImageButton
+                android:id="@+id/play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:padding="16dp"
+                android:scaleType="centerInside"
+                android:background="?android:attr/selectableItemBackgroundBorderless" />
+
+            <ImageButton
+                android:id="@+id/next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:padding="16dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_next"
+                android:background="?android:attr/selectableItemBackgroundBorderless" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>
