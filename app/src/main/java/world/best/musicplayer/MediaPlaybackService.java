@@ -1,6 +1,8 @@
 package world.best.musicplayer;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
@@ -9,41 +11,38 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.pm.PackageManager;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteException;
 import android.graphics.Bitmap;
-import android.media.audiofx.AudioEffect;
 import android.media.AudioManager;
 import android.media.AudioManager.OnAudioFocusChangeListener;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
+import android.media.audiofx.AudioEffect;
 import android.media.browse.MediaBrowser;
 import android.media.session.MediaSession;
 import android.media.session.PlaybackState;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.PowerManager;
-import android.os.SystemClock;
 import android.os.PowerManager.WakeLock;
+import android.os.SystemClock;
 import android.provider.MediaStore;
 import android.service.media.MediaBrowserService;
 import android.support.annotation.Nullable;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.Toast;
-
-import world.best.musicplayer.activity.MainActivity;
-import world.best.musicplayer.activity.NowPlayingActivity;
-import world.best.musicplayer.utils.MusicUtils;
-import world.best.musicplayer.utils.TagUtils;
 
 import java.io.IOException;
 import java.lang.ref.WeakReference;
@@ -53,6 +52,10 @@ import java.util.Random;
 import java.util.Vector;
 
 import musicplayer.IMediaPlaybackService;
+import world.best.musicplayer.activity.MainActivity;
+import world.best.musicplayer.activity.NowPlayingActivity;
+import world.best.musicplayer.utils.MusicUtils;
+import world.best.musicplayer.utils.TagUtils;
 
 /**
  * Provides "background" audio playback capabilities, allowing the
@@ -512,6 +515,8 @@ public class MediaPlaybackService extends MediaBrowserService {
         mDelayedStopHandler.sendMessageDelayed(msg, IDLE_DELAY);
 
         mNoisyAudioStreamReceiver = new NoisyAudioStreamReceiver();
+
+        createNotificationChannel();
     }
 
     @Nullable
@@ -1524,8 +1529,13 @@ public class MediaPlaybackService extends MediaBrowserService {
     }
 
     private void updateNotification(boolean playing) {
-        Notification notification = new Notification(R.drawable.ic_notification,
-                getString(R.string.app_name), System.currentTimeMillis());
+        Notification notification = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_notification)
+                .setContentTitle(getString(R.string.app_name))
+                .build();
+//
+//        Notification notification = new Notification(R.drawable.ic_notification,
+//                getString(R.string.app_name), System.currentTimeMillis());
 
         Bitmap artwork = MusicUtils.getArtwork(getApplicationContext(), getAudioId(), getAlbumId());
 
@@ -1603,6 +1613,24 @@ public class MediaPlaybackService extends MediaBrowserService {
         //                                 .build();
 
         // startForeground(PLAYBACKSERVICE_STATUS, notification);
+    }
+
+
+    private final static String CHANNEL_ID = "offline_music";
+    private void createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = getString(R.string.channel_name);
+            String description = getString(R.string.channel_description);
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
     }
 
     private PendingIntent generateNotificationAction(String intentAction) {

@@ -131,14 +131,6 @@
                     <action android:name="android.intent.action.BOOT_COMPLETED" />
                 </intent-filter>
         </receiver>
-
-
-        <activity
-            android:name="com.google.android.gms.ads.AdActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-            android:theme="@android:style/Theme.Translucent" />
-        <!-- [END add_activity_config_changes] -->
-
     </application>
 
 </manifest>
