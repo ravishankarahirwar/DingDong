@@ -295,6 +295,8 @@
     <string name="effectspanel">Sound effects</string>
 
     <string name="banner_ad_unit_id">ca-app-pub-6809957338111953/8194435790</string>
+    <string name="channel_name">musicoffline</string>
+    <string name="channel_description">Playing offline song</string>
 </resources>
 
 
