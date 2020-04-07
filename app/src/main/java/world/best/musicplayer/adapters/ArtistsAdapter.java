@@ -8,13 +8,14 @@ import android.content.res.Resources;
 import android.database.Cursor;
 import android.net.Uri;
 import android.provider.MediaStore;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import world.best.musicplayer.activity.ArtistActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
 import world.best.musicplayer.R;
+import world.best.musicplayer.activity.ArtistActivity;
 import world.best.musicplayer.utils.Constants;
 import world.best.musicplayer.utils.view.ImageCircleTransform;
 

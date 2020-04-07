@@ -18,6 +18,10 @@
             android:id="@+id/nav_tags"
             android:title="@string/tags"
             android:icon="@drawable/ic_tags" />
+        <item
+            android:id="@+id/nav_eq"
+            android:title="@string/title_eq"
+            android:icon="@drawable/ic_graphic_eq_black_24dp" />
     </group>
 
 </menu>

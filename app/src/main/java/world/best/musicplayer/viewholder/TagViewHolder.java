@@ -1,10 +1,11 @@
 package world.best.musicplayer.viewholder;
 
 import android.view.View;
-import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import world.best.musicplayer.R;
 import world.best.musicplayer.ui.FlowLayout;

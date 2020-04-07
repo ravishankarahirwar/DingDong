@@ -37,12 +37,12 @@ import android.os.PowerManager.WakeLock;
 import android.os.SystemClock;
 import android.provider.MediaStore;
 import android.service.media.MediaBrowserService;
-import android.support.annotation.Nullable;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.Toast;
+
+import androidx.core.app.NotificationCompat;
+import androidx.core.content.ContextCompat;
 
 import java.io.IOException;
 import java.lang.ref.WeakReference;
@@ -154,7 +154,7 @@ public class MediaPlaybackService extends MediaBrowserService {
     private final Shuffler mRand = new Shuffler();
     private int mOpenFailedCounter = 0;
     String[] mCursorCols = new String[] {
-            "audio._id AS _id",             // index must match IDCOLIDX below
+            MediaStore.Audio.Media._ID,             // index must match IDCOLIDX below
             MediaStore.Audio.Media.ARTIST,
             MediaStore.Audio.Media.ALBUM,
             MediaStore.Audio.Media.TITLE,
@@ -519,7 +519,6 @@ public class MediaPlaybackService extends MediaBrowserService {
         createNotificationChannel();
     }
 
-    @Nullable
     @Override
     public BrowserRoot onGetRoot(String s, int i, Bundle bundle) {
         return null;
@@ -1529,9 +1528,12 @@ public class MediaPlaybackService extends MediaBrowserService {
     }
 
     private void updateNotification(boolean playing) {
+        Notification.MediaStyle style = new Notification.MediaStyle();
         Notification notification = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_notification)
                 .setContentTitle(getString(R.string.app_name))
+                .setOnlyAlertOnce(true)
+                .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                 .build();
 //
 //        Notification notification = new Notification(R.drawable.ic_notification,

@@ -1,11 +1,13 @@
 package world.best.musicplayer.behavior;
 
 import android.content.Context;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar.SnackbarLayout;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.RelativeLayout;
+
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class SnackBarBehavior extends CoordinatorLayout.Behavior<RelativeLayout> {
 
@@ -14,7 +16,7 @@ public class SnackBarBehavior extends CoordinatorLayout.Behavior<RelativeLayout>
 
     @Override
     public boolean layoutDependsOn(CoordinatorLayout parent, RelativeLayout child, View dependency) {
-        return dependency instanceof SnackbarLayout;
+        return dependency instanceof Snackbar.SnackbarLayout;
     }
 
     @Override

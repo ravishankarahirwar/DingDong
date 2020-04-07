@@ -4,19 +4,21 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.MediaStore;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import world.best.musicplayer.adapters.SongsAdapter;
-import world.best.musicplayer.cursorloaders.CursorType;
-import world.best.musicplayer.cursorloaders.CursorLoaderManager;
-import world.best.musicplayer.layoutmanagers.ContentLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import world.best.musicplayer.R;
+import world.best.musicplayer.adapters.SongsAdapter;
+import world.best.musicplayer.cursorloaders.CursorLoaderManager;
+import world.best.musicplayer.cursorloaders.CursorType;
+import world.best.musicplayer.layoutmanagers.ContentLayoutManager;
 import world.best.musicplayer.utils.Constants;
 import world.best.musicplayer.utils.MusicUtils;
 
@@ -33,7 +35,7 @@ public class AlbumActivity extends BaseDetailActivity {
     private TextView mCountAndDuration;
     private LinearLayout mHeader;
     private Cursor mCursor;
-
+    Handler handler;
     @Override
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);

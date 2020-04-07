@@ -18,9 +18,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.provider.MediaStore;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.graphics.Palette;
-import android.support.v7.widget.Toolbar;
 import android.transition.Transition;
 import android.view.MenuItem;
 import android.view.View;
@@ -32,16 +29,20 @@ import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import world.best.musicplayer.dialog.AddTagDialog;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
+import androidx.palette.graphics.Palette;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import world.best.musicplayer.MediaPlaybackService;
 import world.best.musicplayer.R;
+import world.best.musicplayer.dialog.AddTagDialog;
 import world.best.musicplayer.ui.FlowLayout;
 import world.best.musicplayer.utils.Constants;
 import world.best.musicplayer.utils.MusicUtils;
 import world.best.musicplayer.utils.TagUtils;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class NowPlayingActivity extends BaseActivity implements ServiceConnection {
 

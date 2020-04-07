@@ -3,22 +3,24 @@ package world.best.musicplayer.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import world.best.musicplayer.activity.TagActivity;
-import world.best.musicplayer.R;
-import world.best.musicplayer.utils.Constants;
-import world.best.musicplayer.utils.TagUtils;
-import world.best.musicplayer.viewholder.AutoTagViewHolder;
-import world.best.musicplayer.viewholder.TagViewHolder;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import world.best.musicplayer.R;
+import world.best.musicplayer.activity.TagActivity;
+import world.best.musicplayer.utils.Constants;
+import world.best.musicplayer.utils.TagUtils;
+import world.best.musicplayer.viewholder.AutoTagViewHolder;
+import world.best.musicplayer.viewholder.TagViewHolder;
 
 public class TagsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -98,7 +100,7 @@ public class TagsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 }
 
                 if (Character.isLetter(index)) {
-                    holder.tagIndex.setText(String.valueOf(index));
+                    holder.tagIndex.setText(String.valueOf(index).toUpperCase());
                 } else {
                     holder.tagIndex.setText("#");
                 }

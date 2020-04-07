@@ -17,24 +17,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
+import android.os.RemoteException;
 import android.provider.MediaStore;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityOptionsCompat;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.Loader;
-import android.support.v4.util.Pair;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.animation.OvershootInterpolator;
 import android.view.View;
+import android.view.animation.OvershootInterpolator;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
@@ -46,22 +34,37 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import world.best.musicplayer.adapters.SongsAdapter;
-import world.best.musicplayer.adapters.ArtistsAdapter;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.util.Pair;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
+
+import java.util.ArrayList;
+
+import world.best.musicplayer.MediaPlaybackService;
+import world.best.musicplayer.R;
 import world.best.musicplayer.adapters.AlbumsAdapter;
+import world.best.musicplayer.adapters.ArtistsAdapter;
+import world.best.musicplayer.adapters.SongsAdapter;
 import world.best.musicplayer.adapters.TagsAdapter;
 import world.best.musicplayer.adapters.ViewSelectionListAdapter;
 import world.best.musicplayer.cursorloaders.CursorLoaderCallBack;
-import world.best.musicplayer.cursorloaders.CursorType;
 import world.best.musicplayer.cursorloaders.CursorLoaderManager;
+import world.best.musicplayer.cursorloaders.CursorType;
 import world.best.musicplayer.cursorloaders.TagsLoader;
 import world.best.musicplayer.layoutmanagers.ContentLayoutManager;
-import world.best.musicplayer.MediaPlaybackService;
-import world.best.musicplayer.R;
 import world.best.musicplayer.utils.MusicUtils;
 import world.best.musicplayer.utils.TagUtils;
-
-import java.util.ArrayList;
 
 public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener,
                                                             ServiceConnection,
@@ -766,15 +769,13 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         } else if (id == R.id.nav_albums) {
             setViewSelection(2);
         } else if (id == R.id.nav_tags) {
-//            Intent intent = new Intent();
-//            intent.setAction("android.media.action.DISPLAY_AUDIO_EFFECT_CONTROL_PANEL");
-//            if((intent.resolveActivity(getPackageManager()) != null)) {
-//                startActivityForResult(intent, 100);
-//                // REQUEST_EQ is an int of your choosing
-//            } else {
-//                // No equalizer found :(
-//            }
             setViewSelection(3);
+        } else if (id == R.id.nav_eq) {
+            try {
+                MusicUtils.openEqualizer(MainActivity.this);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -1100,7 +1101,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 });
         snackbar.setActionTextColor(getColor(android.R.color.white));
         View snackView = snackbar.getView();
-        TextView snackMessage = (TextView) snackView.findViewById(android.support.design.R.id.snackbar_text);
+        TextView snackMessage = (TextView) snackView.findViewById(com.google.android.material.R.id.snackbar_text);
         snackMessage.setTextColor(getColor(android.R.color.darker_gray));
         snackbar.show();
 

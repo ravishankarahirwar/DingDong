@@ -3,8 +3,9 @@ package world.best.musicplayer.cursorloaders;
 import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.content.Loader;
+
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
 
 /**
  * This is the base caass for all cursor loaders in the application

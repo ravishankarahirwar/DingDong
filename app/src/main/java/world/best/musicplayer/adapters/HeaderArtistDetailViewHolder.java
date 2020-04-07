@@ -1,10 +1,12 @@
 package world.best.musicplayer.adapters;
 
-import world.best.musicplayer.R;
 import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.recyclerview.widget.RecyclerView;
+
+import world.best.musicplayer.R;
 
 
 public class HeaderArtistDetailViewHolder extends RecyclerView.ViewHolder {

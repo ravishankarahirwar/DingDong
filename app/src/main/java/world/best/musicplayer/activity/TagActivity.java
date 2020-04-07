@@ -19,20 +19,22 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.support.v7.widget.RecyclerView;
-import world.best.musicplayer.utils.Constants;
-import world.best.musicplayer.adapters.SongsAdapter;
-import world.best.musicplayer.cursorloaders.CursorLoaderManager;
-import world.best.musicplayer.factories.MenuFactory;
-import world.best.musicplayer.layoutmanagers.ContentLayoutManager;
-import world.best.musicplayer.R;
-import world.best.musicplayer.utils.MusicUtils;
-import world.best.musicplayer.utils.OnUnTagListener;
-import world.best.musicplayer.utils.TagUtils;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import world.best.musicplayer.R;
+import world.best.musicplayer.adapters.SongsAdapter;
+import world.best.musicplayer.cursorloaders.CursorLoaderManager;
+import world.best.musicplayer.factories.MenuFactory;
+import world.best.musicplayer.layoutmanagers.ContentLayoutManager;
+import world.best.musicplayer.utils.Constants;
+import world.best.musicplayer.utils.MusicUtils;
+import world.best.musicplayer.utils.OnUnTagListener;
+import world.best.musicplayer.utils.TagUtils;
 
 public class TagActivity extends BaseDetailActivity implements OnUnTagListener{
 

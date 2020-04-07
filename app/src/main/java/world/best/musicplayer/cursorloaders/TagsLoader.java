@@ -1,12 +1,13 @@
 package world.best.musicplayer.cursorloaders;
 
 import android.content.Context;
-import android.support.v4.content.AsyncTaskLoader;
 
-import world.best.musicplayer.utils.TagUtils;
+import androidx.loader.content.AsyncTaskLoader;
 
 import java.util.ArrayList;
 import java.util.Map;
+
+import world.best.musicplayer.utils.TagUtils;
 
 public class TagsLoader extends AsyncTaskLoader<ArrayList<String>> {
 
