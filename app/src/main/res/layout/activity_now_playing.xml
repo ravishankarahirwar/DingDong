@@ -7,7 +7,7 @@
     android:fitsSystemWindows="true"
     tools:context="world.best.musicplayer.activity.NowPlayingActivity" >
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="71dp"
@@ -60,7 +60,7 @@
 
         </RelativeLayout>
 
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <View
         android:id="@+id/toolbar_divider"

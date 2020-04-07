@@ -4,11 +4,12 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.graphics.Point;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.RecyclerView;
-import android.view.animation.DecelerateInterpolator;
 import android.view.Display;
 import android.view.WindowManager;
+import android.view.animation.DecelerateInterpolator;
+
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.RecyclerView;
 
 import world.best.musicplayer.adapters.BaseCursorAdapter;
 import world.best.musicplayer.adapters.ContentViewHolder;

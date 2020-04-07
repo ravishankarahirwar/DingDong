@@ -1,9 +1,9 @@
 package world.best.musicplayer.adapters;
 
 import android.Manifest;
+import android.animation.Animator;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.animation.Animator;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -16,9 +16,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
 import android.provider.Settings;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
@@ -31,23 +28,30 @@ import android.widget.ListPopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import world.best.musicplayer.activity.ArtistActivity;
-import world.best.musicplayer.activity.AlbumActivity;
-import world.best.musicplayer.activity.BaseDetailActivity;
-import world.best.musicplayer.activity.MainActivity;
-import world.best.musicplayer.activity.SearchActivity;
-import world.best.musicplayer.activity.TagActivity;;
-import world.best.musicplayer.dialog.AddTagDialog;
-import world.best.musicplayer.utils.MusicUtils;
-import world.best.musicplayer.utils.OnUnTagListener;
-import world.best.musicplayer.utils.TagUtils;
-import world.best.musicplayer.factories.MenuFactory;
-import world.best.musicplayer.R;
+
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import world.best.musicplayer.R;
+import world.best.musicplayer.activity.AlbumActivity;
+import world.best.musicplayer.activity.ArtistActivity;
+import world.best.musicplayer.activity.BaseDetailActivity;
+import world.best.musicplayer.activity.MainActivity;
+import world.best.musicplayer.activity.SearchActivity;
+import world.best.musicplayer.activity.TagActivity;
+import world.best.musicplayer.dialog.AddTagDialog;
+import world.best.musicplayer.factories.MenuFactory;
+import world.best.musicplayer.utils.MusicUtils;
+import world.best.musicplayer.utils.OnUnTagListener;
+import world.best.musicplayer.utils.TagUtils;
+
+;
 
 public class SongsAdapter extends BaseCursorAdapter<RecyclerView.ViewHolder> implements OnItemClickListener {
 
@@ -394,6 +398,8 @@ public class SongsAdapter extends BaseCursorAdapter<RecyclerView.ViewHolder> imp
                 Uri uri = Uri.parse(mAudioFilePath);
                 Intent share = new Intent(Intent.ACTION_SEND);
                 share.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                share.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
+                share.putExtra(Intent.EXTRA_TEXT,"I suggest to download Music Player Ringtone & Share: https://play.google.com/store/apps/details?id=world.best.musicplayer");
                 share.setType("audio/*");
                 share.putExtra(Intent.EXTRA_STREAM, uri);
                 mActivity.startActivity(Intent.createChooser(share, "Share audio"));

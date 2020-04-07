@@ -8,24 +8,25 @@ import android.content.res.Resources;
 import android.database.Cursor;
 import android.net.Uri;
 import android.provider.MediaStore;
-import android.support.v7.widget.RecyclerView;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import world.best.musicplayer.activity.AlbumActivity;
-import world.best.musicplayer.activity.ArtistActivity;
-import world.best.musicplayer.activity.MainActivity;
-import world.best.musicplayer.activity.SearchActivity;
-import world.best.musicplayer.R;
-import world.best.musicplayer.utils.Constants;
-import world.best.musicplayer.utils.MusicUtils;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import world.best.musicplayer.R;
+import world.best.musicplayer.activity.AlbumActivity;
+import world.best.musicplayer.activity.ArtistActivity;
+import world.best.musicplayer.activity.MainActivity;
+import world.best.musicplayer.activity.SearchActivity;
+import world.best.musicplayer.utils.Constants;
+import world.best.musicplayer.utils.MusicUtils;
 
 public class AlbumsAdapter extends BaseCursorAdapter<RecyclerView.ViewHolder> {
 

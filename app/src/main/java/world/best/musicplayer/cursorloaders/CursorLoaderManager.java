@@ -1,13 +1,14 @@
 package world.best.musicplayer.cursorloaders;
 
-import world.best.musicplayer.factories.CursorLoaderFactory;
-import world.best.musicplayer.utils.Constants;
-
 import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.support.v4.content.Loader;
 import android.util.Log;
+
+import androidx.loader.content.Loader;
+
+import world.best.musicplayer.factories.CursorLoaderFactory;
+import world.best.musicplayer.utils.Constants;
 
 /**
  * This is the class is user for Loading Song/Track Data from Media Store.

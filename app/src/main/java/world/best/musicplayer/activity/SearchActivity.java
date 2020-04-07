@@ -1,20 +1,15 @@
 package world.best.musicplayer.activity;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.database.Cursor;
-import android.Manifest;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.NavUtils;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -27,18 +22,24 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import world.best.musicplayer.adapters.SongsAdapter;
-import world.best.musicplayer.adapters.ArtistsAdapter;
-import world.best.musicplayer.adapters.AlbumsAdapter;
-import world.best.musicplayer.layoutmanagers.ContentLayoutManager;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.NavUtils;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import world.best.musicplayer.R;
+import world.best.musicplayer.adapters.AlbumsAdapter;
+import world.best.musicplayer.adapters.ArtistsAdapter;
+import world.best.musicplayer.adapters.SongsAdapter;
+import world.best.musicplayer.layoutmanagers.ContentLayoutManager;
 import world.best.musicplayer.ui.FlowLayout;
 import world.best.musicplayer.utils.Constants;
 import world.best.musicplayer.utils.MusicUtils;
 import world.best.musicplayer.utils.TagUtils;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class SearchActivity extends AppCompatActivity {
 

@@ -1,19 +1,20 @@
 package world.best.musicplayer.activity;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.BroadcastReceiver;
-import android.content.pm.PackageManager;
 import android.content.ServiceConnection;
-import android.Manifest;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
+import com.squareup.picasso.Picasso;
 
 import world.best.musicplayer.MediaPlaybackServiceManager;
 import world.best.musicplayer.MediaPlaybackServiceManager.ServiceToken;
 import world.best.musicplayer.MusicApplication;
-
-import com.squareup.picasso.Picasso;
 
 public abstract class BaseActivity extends AppCompatActivity implements ServiceConnection {
 

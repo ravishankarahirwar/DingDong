@@ -1,14 +1,15 @@
 package world.best.musicplayer.utils;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -18,13 +19,13 @@ import android.graphics.ColorFilter;
 import android.graphics.PixelFormat;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.media.audiofx.AudioEffect;
 import android.net.Uri;
 import android.os.Environment;
 import android.os.ParcelFileDescriptor;
 import android.os.RemoteException;
 import android.provider.MediaStore;
 import android.provider.Settings;
-import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.text.format.Time;
 import android.util.Log;
@@ -36,6 +37,9 @@ import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+
 import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
@@ -43,7 +47,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import java.util.Arrays;
-import java.util.concurrent.TimeUnit;
 import java.util.Formatter;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -51,6 +54,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import world.best.musicplayer.MediaPlaybackService;
 import world.best.musicplayer.MediaPlaybackServiceManager;
@@ -1888,6 +1892,23 @@ public class MusicUtils {
             LogEntry entry = sMusicLog[idx];
             if (entry != null) {
                 entry.dump(out);
+            }
+        }
+    }
+
+    public static void openEqualizer(@NonNull final Activity activity) throws RemoteException {
+        final int sessionId = MediaPlaybackServiceManager.sService.getAudioSessionId();
+        if (sessionId == AudioEffect.ERROR_BAD_VALUE) {
+            Toast.makeText(activity, "No Session Id", Toast.LENGTH_LONG).show();
+        } else {
+            try {
+                final Intent effects = new Intent(AudioEffect.ACTION_DISPLAY_AUDIO_EFFECT_CONTROL_PANEL);
+                effects.putExtra(AudioEffect.EXTRA_PACKAGE_NAME, "world.best.musicplayer");
+                effects.putExtra(AudioEffect.EXTRA_AUDIO_SESSION, sessionId);
+                effects.putExtra(AudioEffect.EXTRA_CONTENT_TYPE, AudioEffect.CONTENT_TYPE_MUSIC);
+                activity.startActivityForResult(effects, 0);
+            } catch (@NonNull final ActivityNotFoundException notFound) {
+                Toast.makeText(activity, "There is no equalizer", Toast.LENGTH_SHORT).show();
             }
         }
     }

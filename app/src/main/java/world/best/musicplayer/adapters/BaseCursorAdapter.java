@@ -3,12 +3,13 @@ package world.best.musicplayer.adapters;
 import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Picasso;
 
 import world.best.musicplayer.MusicApplication;
 import world.best.musicplayer.utils.DbContentQueryHandler;
-
-import com.squareup.picasso.Picasso;
 
 public abstract class BaseCursorAdapter<VH extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<VH> {
 

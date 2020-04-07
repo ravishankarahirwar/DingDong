@@ -13,13 +13,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.provider.MediaStore;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityOptionsCompat;
-import android.support.v4.app.NavUtils;
-import android.support.v4.util.Pair;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -27,15 +20,24 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.app.NavUtils;
+import androidx.core.util.Pair;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
+import java.util.concurrent.TimeUnit;
+
+import world.best.musicplayer.MediaPlaybackService;
+import world.best.musicplayer.R;
 import world.best.musicplayer.adapters.SongsAdapter;
 import world.best.musicplayer.cursorloaders.CursorLoaderCallBack;
 import world.best.musicplayer.layoutmanagers.ContentLayoutManager;
-import world.best.musicplayer.MediaPlaybackService;
-import world.best.musicplayer.R;
 import world.best.musicplayer.utils.Constants;
 import world.best.musicplayer.utils.MusicUtils;
-
-import java.util.concurrent.TimeUnit;
 
 public abstract class BaseDetailActivity extends BaseActivity implements CursorLoaderCallBack {
 
@@ -296,7 +298,7 @@ public abstract class BaseDetailActivity extends BaseActivity implements CursorL
 
                 snackbar.setActionTextColor(getColor(android.R.color.white));
                 View snackView = snackbar.getView();
-                TextView snackMessage = (TextView) snackView.findViewById(android.support.design.R.id.snackbar_text);
+                TextView snackMessage = (TextView) snackView.findViewById(com.google.android.material.R.id.snackbar_text);
                 snackMessage.setTextColor(getColor(android.R.color.darker_gray));
                 snackbar.show();
     }

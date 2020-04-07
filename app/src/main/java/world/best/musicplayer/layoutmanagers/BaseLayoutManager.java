@@ -1,6 +1,7 @@
 package world.best.musicplayer.layoutmanagers;
 
-import android.support.v7.widget.RecyclerView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 public abstract class BaseLayoutManager extends RecyclerView.LayoutManager {
 

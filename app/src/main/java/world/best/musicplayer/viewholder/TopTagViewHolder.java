@@ -1,7 +1,8 @@
 package world.best.musicplayer.viewholder;
 
 import android.view.View;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 public class TopTagViewHolder extends RecyclerView.ViewHolder {
 

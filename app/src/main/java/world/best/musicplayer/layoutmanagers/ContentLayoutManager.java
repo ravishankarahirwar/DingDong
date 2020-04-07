@@ -1,10 +1,11 @@
 package world.best.musicplayer.layoutmanagers;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 public class ContentLayoutManager extends BaseLayoutManager {
 
